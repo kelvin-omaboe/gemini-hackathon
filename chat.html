@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AfriSense | Symptom Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-screen" data-page="chat">
+    <!-- Primary navigation -->
+    <header class="px-6 pt-6">
+      <nav class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <div class="h-10 w-10 rounded-2xl bg-white flex items-center justify-center shadow">
+            <img class="h-8 w-8 object-contain" src="afrisense logo.png" alt="AfriSense logo" />
+          </div>
+          <div>
+            <p class="text-base font-semibold tracking-wide text-stone-900">AfriSense</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-stone-600">
+              Health assistance at your fingertips
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-sm">
+          <a class="nav-link" data-nav-link href="index.html">Home</a>
+          <a class="nav-link" data-nav-link href="chat.html">Chat</a>
+          <a class="nav-link" data-nav-link href="history.html">History</a>
+          <a class="nav-link" data-nav-link href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="px-6 pb-10">
+      <!-- Chat workspace + guidance panels -->
+      <section class="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]">
+        <!-- Chat interface -->
+        <div class="glass-card rounded-[32px] p-4 sm:p-6 flex flex-col gap-4 min-h-0">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h1 class="heading-display text-3xl">Symptom Chat</h1>
+              <p class="text-sm text-stone-600">Describe how you feel in simple words. We will never diagnose or prescribe.</p>
+            </div>
+            <button class="button-outline rounded-full px-4 py-2 text-sm" data-new-chat>New chat</button>
+          </div>
+
+          <div
+            class="chat-feed scrollbar-visible flex-none rounded-3xl bg-white/70 p-4 shadow-inner h-[360px] max-h-[360px] sm:h-[420px] sm:max-h-[420px]"
+            data-chat-messages
+            aria-live="polite"
+          ></div>
+
+          <div class="flex flex-col gap-3">
+            <label class="text-xs uppercase tracking-[0.3em] text-stone-500" for="symptom-input">Your symptoms</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input
+                id="symptom-input"
+                data-chat-input
+                class="flex-1 rounded-full border border-stone-200 bg-white px-4 py-3 text-sm shadow"
+                placeholder="Example: fever, stomach pain, headache after travel"
+                autocomplete="off"
+              />
+              <button class="button-primary rounded-full px-6 py-3 text-sm" data-send-button>Send</button>
+            </div>
+            <p class="text-xs text-stone-500">
+              This tool provides possible causes and safety guidance only. Always seek medical care for severe symptoms.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right-side guidance and gamification -->
+        <aside class="flex flex-col gap-6">
+          <div class="glass-card rounded-[28px] p-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <h2 class="heading-display text-2xl">Risk & Guidance</h2>
+              <div data-risk-indicator></div>
+            </div>
+            <p class="text-sm text-stone-600">
+              We highlight your risk level and what to do next. This does not replace a healthcare worker.
+            </p>
+            <div>
+              <p class="text-xs uppercase tracking-[0.3em] text-stone-500">What you should do next</p>
+              <ul class="mt-3 space-y-2" data-next-steps>
+                <li class="text-sm text-stone-600">Share your symptoms to see guidance.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-[28px] p-5 space-y-4" data-care-panel>
+            <div class="flex items-center justify-between gap-3">
+              <h2 class="heading-display text-2xl">Nearest Care</h2>
+              <span class="text-[10px] uppercase tracking-[0.3em] text-stone-400">Google Maps</span>
+            </div>
+            <p class="text-sm text-stone-600" data-care-status>
+              Loading map and trying your location for nearby clinics, hospitals, and pharmacies.
+            </p>
+            <div class="space-y-2" data-care-manual>
+              <label class="text-[10px] uppercase tracking-[0.3em] text-stone-500" for="care-location">
+                Enter your town or area
+              </label>
+              <div class="flex flex-col sm:flex-row gap-2">
+                <input
+                  id="care-location"
+                  class="flex-1 rounded-full border border-stone-200 bg-white px-4 py-2 text-sm shadow"
+                  placeholder="Example: Kumasi, Ghana"
+                  data-care-input
+                />
+                <button class="button-outline rounded-full px-4 py-2 text-xs" data-care-search>
+                  Search
+                </button>
+              </div>
+              <p class="text-xs text-stone-500">Use this if location access is blocked.</p>
+            </div>
+            <div class="map-shell rounded-2xl bg-white shadow" data-care-map></div>
+            <ul class="space-y-2" data-care-list></ul>
+          </div>
+
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

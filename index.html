@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AfriSense | Community Symptom Guidance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-screen" data-page="landing">
+    <!-- Primary navigation -->
+    <header class="px-6 pt-6">
+      <nav class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <div class="h-10 w-10 rounded-2xl bg-white flex items-center justify-center shadow">
+            <img class="h-8 w-8 object-contain" src="afrisense logo.png" alt="AfriSense logo" />
+          </div>
+          <div>
+            <p class="text-base font-semibold tracking-wide text-stone-900">AfriSense</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-stone-600">
+              Health assistance at your fingertips
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-sm">
+          <a class="nav-link" data-nav-link href="index.html">Home</a>
+          <a class="nav-link" data-nav-link href="chat.html">Chat</a>
+          <a class="nav-link" data-nav-link href="history.html">History</a>
+          <a class="nav-link" data-nav-link href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="px-6 pb-16">
+      <!-- Hero and snapshot -->
+      <section class="mt-10 grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div class="space-y-6">
+          <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Built for African communities</p>
+          <h1 class="heading-display text-4xl sm:text-5xl text-stone-900">
+            A warm, trusted space to understand symptoms and take the next step.
+          </h1>
+          <p class="text-base text-stone-700 leading-relaxed">
+            AfriSense is a culturally-aware AI assistant designed to help you make sense of symptoms, spot risk levels, and
+            choose safe next steps. We do not diagnose or prescribe medication. We help you feel informed, calm, and ready
+            to act.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a class="button-primary rounded-full px-6 py-3 text-sm" href="chat.html">Start a symptom check</a>
+            <a class="button-outline rounded-full px-6 py-3 text-sm" href="about.html">How it keeps you safe</a>
+          </div>
+          <div class="flex gap-4 text-xs text-stone-500">
+            <span>Anonymous sessions</span>
+            <span>Offline-ready UI</span>
+            <span>Simple language</span>
+          </div>
+        </div>
+        <div class="glass-card glance-card rounded-[32px] p-6 space-y-4 fade-up">
+          <div class="flex items-center justify-between">
+            <h2 class="heading-display text-2xl">Today at a glance</h2>
+            <span class="risk-pill risk-low">Risk: Low</span>
+          </div>
+          <p class="text-sm text-stone-600">
+            Example: "I feel tired, dizzy, and my throat hurts after being in the sun." AfriSense summarizes what it hears
+            and shares possible causes in a simple way.
+          </p>
+          <div class="rounded-2xl bg-white p-4 shadow">
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-500">What you should do next</p>
+            <ul class="mt-3 space-y-2 text-sm text-stone-700">
+              <li>Drink water, rest in a shaded area, and cool down.</li>
+              <li>If symptoms worsen or you faint, visit the nearest clinic.</li>
+              <li>Keep a trusted person informed.</li>
+            </ul>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="h-12 w-12 rounded-2xl bg-amber-100 flex items-center justify-center">
+              <span class="text-xl">★</span>
+            </div>
+            <div>
+              <p class="text-sm font-semibold">Health Awareness Level</p>
+              <p class="text-xs text-stone-500">Earn points as you complete checks.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section class="mt-16 grid gap-6 lg:grid-cols-3">
+        <div class="glass-card rounded-3xl p-6 space-y-3">
+          <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Step 1</p>
+          <h3 class="heading-display text-2xl">Share symptoms</h3>
+          <p class="text-sm text-stone-600">
+            Describe how you feel in your own words. We support mixed languages and everyday phrasing.
+          </p>
+        </div>
+        <div class="glass-card rounded-3xl p-6 space-y-3">
+          <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Step 2</p>
+          <h3 class="heading-display text-2xl">See the risk level</h3>
+          <p class="text-sm text-stone-600">
+            AfriSense highlights whether your situation looks low, medium, or urgent based on the information shared.
+          </p>
+        </div>
+        <div class="glass-card rounded-3xl p-6 space-y-3">
+          <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Step 3</p>
+          <h3 class="heading-display text-2xl">Take safe action</h3>
+          <p class="text-sm text-stone-600">
+            We suggest next steps that fit local realities: clinics, pharmacies, CHPS compounds, and emergency signs.
+          </p>
+        </div>
+      </section>
+
+      <!-- Design and trust -->
+      <section class="mt-16">
+        <div class="glass-card rounded-[32px] p-6 sm:p-10 grid gap-8 lg:grid-cols-[2fr_1fr]">
+          <div class="space-y-4">
+            <h2 class="heading-display text-3xl">Designed with care for African contexts</h2>
+            <p class="text-sm text-stone-600">
+              We prioritize respectful language, cultural sensitivity, and low-resource guidance. Your session stays
+              anonymous, and you control your data in your browser.
+            </p>
+            <div class="flex flex-wrap gap-3 text-xs text-stone-600">
+              <span class="rounded-full bg-white px-3 py-1">No login required</span>
+              <span class="rounded-full bg-white px-3 py-1">Low-bandwidth ready</span>
+              <span class="rounded-full bg-white px-3 py-1">Clear medical disclaimers</span>
+            </div>
+          </div>
+          <div class="rounded-3xl bg-white p-6 shadow space-y-3">
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Medical disclaimer</p>
+            <p class="text-sm text-stone-600">
+              AfriSense does not diagnose or prescribe. It shares possible causes and guidance only. Always seek medical
+              care when symptoms are severe or worsening.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="px-6 pb-10 text-sm font-semibold text-stone-700">
+      <p>This is a prototype HealthTech platform built by Bytant Innovative Group.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

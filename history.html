@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AfriSense | History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-screen" data-page="history">
+    <!-- Primary navigation -->
+    <header class="px-6 pt-6">
+      <nav class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <div class="h-10 w-10 rounded-2xl bg-white flex items-center justify-center shadow">
+            <img class="h-8 w-8 object-contain" src="afrisense logo.png" alt="AfriSense logo" />
+          </div>
+          <div>
+            <p class="text-base font-semibold tracking-wide text-stone-900">AfriSense</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-stone-600">
+              Health assistance at your fingertips
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-sm">
+          <a class="nav-link" data-nav-link href="index.html">Home</a>
+          <a class="nav-link" data-nav-link href="chat.html">Chat</a>
+          <a class="nav-link" data-nav-link href="history.html">History</a>
+          <a class="nav-link" data-nav-link href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="px-6 pb-10">
+      <!-- Session history + gamification -->
+      <section class="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]">
+        <div class="glass-card rounded-[32px] p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h1 class="heading-display text-3xl">Chat History</h1>
+              <p class="text-sm text-stone-600">Revisit your symptom checks from this session.</p>
+            </div>
+            <button class="button-outline rounded-full px-4 py-2 text-sm" data-reset-session>
+              Reset session
+            </button>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2" data-history-list></div>
+        </div>
+
+        <aside class="flex flex-col gap-6">
+          <div class="glass-card rounded-[28px] p-5 space-y-4">
+            <h2 class="heading-display text-2xl">Health Awareness</h2>
+            <div class="flex items-center justify-between">
+              <p class="text-2xl font-semibold" data-points>0</p>
+              <p class="text-sm text-stone-600" data-level>Level 1</p>
+            </div>
+            <div class="progress-track h-2 rounded-full overflow-hidden">
+              <div class="progress-bar h-full" data-progress style="width: 0%"></div>
+            </div>
+            <p class="text-xs text-stone-500" data-next-level>100 points to level up</p>
+            <div class="flex flex-wrap gap-2" data-badges></div>
+          </div>
+
+          <div class="glass-card rounded-[28px] p-5 space-y-3">
+            <h2 class="heading-display text-2xl">Tip of the day</h2>
+            <p class="text-sm text-stone-600" data-health-tip></p>
+            <button class="button-outline rounded-full px-4 py-2 text-xs" data-tip-action>
+              I learned this
+            </button>
+          </div>
+
+          <div class="glass-card rounded-[28px] p-5 space-y-3">
+            <h2 class="heading-display text-2xl">Privacy reminder</h2>
+            <p class="text-sm text-stone-600">
+              Your chats are stored locally on this device. Clearing storage or resetting the session will remove them.
+            </p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

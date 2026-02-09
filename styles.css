@@ -1,0 +1,281 @@
+﻿/*
+  Custom design tokens and atmospheric patterning for the African-inspired theme.
+*/
+:root {
+  --clay: #b86f52;
+  --earth: #8a5a44;
+  --sand: #f1e2c8;
+  --sun: #f5c26b;
+  --leaf: #6f8f4e;
+  --sky: #e8f1ef;
+  --ink: #2a2725;
+  --peach: #f6d5c3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;
+  color: var(--ink);
+  background-color: var(--sand);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(245, 194, 107, 0.35), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(111, 143, 78, 0.25), transparent 38%),
+    linear-gradient(135deg, rgba(184, 111, 82, 0.12) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(184, 111, 82, 0.12) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(184, 111, 82, 0.12) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(184, 111, 82, 0.12) 25%, transparent 25%);
+  background-position: 0 0, 0 0, 18px 0, 18px 0, 0 0, 0 0;
+  background-size: auto, auto, 36px 36px, 36px 36px, 36px 36px;
+}
+
+.heading-display {
+  font-family: "DM Serif Display", serif;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 20px 50px rgba(42, 39, 37, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+.glance-card {
+  border: 2px solid rgba(245, 194, 107, 0.7);
+  box-shadow:
+    0 24px 60px rgba(42, 39, 37, 0.16),
+    0 0 0 6px rgba(245, 194, 107, 0.2);
+  background: linear-gradient(135deg, rgba(255, 247, 230, 0.9), rgba(255, 255, 255, 0.9));
+}
+
+.chat-bubble {
+  animation: bubbleIn 0.35s ease;
+}
+
+.chat-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  justify-content: flex-end;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+  -ms-overflow-style: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(138, 90, 68, 0.6) transparent;
+  position: relative;
+}
+
+.scrollbar-visible {
+  overflow-y: scroll !important;
+  scrollbar-width: auto;
+  scrollbar-color: rgba(138, 90, 68, 0.8) rgba(241, 226, 200, 0.6);
+}
+
+.chat-feed::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat-feed::-webkit-scrollbar-track {
+  background: rgba(241, 226, 200, 0.6);
+  border-radius: 999px;
+}
+
+.chat-feed::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(138, 90, 68, 0.9), rgba(245, 194, 107, 0.9));
+  border-radius: 999px;
+  border: 2px solid rgba(241, 226, 200, 0.6);
+  background-clip: padding-box;
+}
+
+.chat-feed::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(138, 90, 68, 1), rgba(245, 194, 107, 1));
+}
+
+.scrollbar-visible::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  right: 8px;
+  width: 8px;
+  border-radius: 999px;
+  background: rgba(241, 226, 200, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(138, 90, 68, 0.2);
+  pointer-events: none;
+}
+
+.scrollbar-visible::before {
+  content: "";
+  position: absolute;
+  right: 9px;
+  width: 6px;
+  height: var(--scroll-thumb-size, 48px);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(138, 90, 68, 0.85), rgba(245, 194, 107, 0.85));
+  transform: translateY(var(--scroll-thumb-offset, 12px));
+  transition: transform 0.08s ease-out;
+  pointer-events: none;
+}
+
+@keyframes bubbleIn {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.pulse-soft {
+  animation: pulseSoft 2.4s ease-in-out infinite;
+}
+
+.risk-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.risk-low {
+  background: rgba(111, 143, 78, 0.2);
+  color: #2f4f1c;
+}
+
+.risk-medium {
+  background: rgba(245, 194, 107, 0.4);
+  color: #7a4d00;
+}
+
+.risk-urgent {
+  background: rgba(184, 111, 82, 0.35);
+  color: #6b2b1b;
+}
+
+.badge-chip {
+  background: rgba(138, 90, 68, 0.12);
+  color: var(--earth);
+  border: 1px dashed rgba(138, 90, 68, 0.4);
+}
+
+.followup-card {
+  margin-top: 0.75rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(245, 194, 107, 0.6);
+  background: rgba(245, 194, 107, 0.16);
+  padding: 0.75rem;
+}
+
+.map-shell {
+  min-height: 220px;
+  width: 100%;
+}
+
+.care-item {
+  border-radius: 1rem;
+  border: 1px solid rgba(138, 90, 68, 0.18);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.75rem 0.9rem;
+  box-shadow: 0 8px 20px rgba(42, 39, 37, 0.08);
+}
+
+.progress-track {
+  background: rgba(42, 39, 37, 0.08);
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--leaf), var(--sun));
+}
+
+.button-primary {
+  background: var(--earth);
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(138, 90, 68, 0.2);
+}
+
+.button-pressed {
+  transform: scale(0.97);
+  box-shadow: 0 6px 12px rgba(138, 90, 68, 0.25);
+}
+
+.button-outline {
+  border: 1px solid rgba(138, 90, 68, 0.35);
+  color: var(--earth);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: var(--earth);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  transform: scaleX(1);
+}
+
+.nav-link.is-active {
+  color: var(--earth);
+  font-weight: 600;
+}
+
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    background-size: auto, auto, 28px 28px, 28px 28px, 28px 28px;
+  }
+}

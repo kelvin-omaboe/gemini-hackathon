@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AfriSense | About & Disclaimer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="min-h-screen" data-page="about">
+    <!-- Primary navigation -->
+    <header class="px-6 pt-6">
+      <nav class="flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <div class="h-10 w-10 rounded-2xl bg-white flex items-center justify-center shadow">
+            <img class="h-8 w-8 object-contain" src="afrisense logo.png" alt="AfriSense logo" />
+          </div>
+          <div>
+            <p class="text-base font-semibold tracking-wide text-stone-900">AfriSense</p>
+            <p class="text-[11px] uppercase tracking-[0.22em] text-stone-600">
+              Health assistance at your fingertips
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-sm">
+          <a class="nav-link" data-nav-link href="index.html">Home</a>
+          <a class="nav-link" data-nav-link href="chat.html">Chat</a>
+          <a class="nav-link" data-nav-link href="history.html">History</a>
+          <a class="nav-link" data-nav-link href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="px-6 pb-12">
+      <!-- Project background and disclaimers -->
+      <section class="mt-6 glass-card rounded-[32px] p-6 sm:p-10 space-y-8">
+          <div>
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Our mission</p>
+            <h1 class="heading-display text-4xl">Clear, culturally aware guidance when you need it</h1>
+            <p class="mt-4 text-sm text-stone-600">
+              AfriSense was built for African communities to help people interpret symptoms without fear. We work with
+              everyday language and emphasize safe next steps in low-resource settings. The tool does not diagnose or
+              prescribe medication.
+            </p>
+          </div>
+
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="rounded-3xl bg-amber-50 p-6 shadow space-y-3 border border-amber-200">
+            <h2 class="heading-display text-2xl">Medical disclaimer</h2>
+            <p class="text-sm text-stone-600">
+              AfriSense provides possible causes and risk guidance only. It is not a medical device and does not replace a
+              qualified healthcare worker. If you have severe pain, trouble breathing, heavy bleeding, seizures, or sudden
+              weakness, seek emergency care immediately.
+            </p>
+          </div>
+          <div class="rounded-3xl bg-emerald-50 p-6 shadow space-y-3 border border-emerald-200">
+            <h2 class="heading-display text-2xl">Data & privacy</h2>
+            <p class="text-sm text-stone-600">
+              Sessions are anonymous. We store your chats locally in your browser. Optional Firestore storage is disabled
+              by default. You can reset the session anytime from the History page.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="rounded-3xl bg-rose-50 p-6 shadow space-y-3 border border-rose-200">
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Safety behavior</p>
+            <p class="text-sm text-stone-600">
+              The AI is trained to never diagnose diseases or prescribe medication. It only suggests possible causes and
+              supportive next steps.
+            </p>
+          </div>
+          <div class="rounded-3xl bg-sky-50 p-6 shadow space-y-3 border border-sky-200">
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Local relevance</p>
+            <p class="text-sm text-stone-600">
+              Guidance includes clinics, pharmacies, CHPS compounds, and community support, suited for low-resource
+              environments.
+            </p>
+          </div>
+          <div class="rounded-3xl bg-orange-50 p-6 shadow space-y-3 border border-orange-200">
+            <p class="text-xs uppercase tracking-[0.3em] text-stone-500">Offline ready</p>
+            <p class="text-sm text-stone-600">
+              The UI works offline and caches core pages. AI responses require a data connection.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
